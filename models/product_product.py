@@ -13,4 +13,6 @@ class ProductProduct(models.Model):
         name = self.display_name
         if self.set_description_sale and self.description_sale:
             name = self.description_sale
+        else:
+            name = super(ProductProduct,self).get_product_multiline_description_sale()
         return name
